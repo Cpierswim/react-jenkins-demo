@@ -12,6 +12,7 @@ pipeline {
 
                 sh 'echo "Building the applicaton..."'
                 sh 'npm install'
+                sh 'npm run-script build'
             }
         }
 
