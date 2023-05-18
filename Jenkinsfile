@@ -10,9 +10,11 @@ pipeline {
                     env.PATH = "${nodejsTool}/bin:${env.PATH}"
                 }
 
-                sh 'echo "Building the applicaton..."'
-                sh 'npm install'
-                sh 'npm run-script build'
+                sh '''
+                    echo "Building the applicaton..."
+                    npm install
+                    npm run-script build
+                '''
             }
         }
 
