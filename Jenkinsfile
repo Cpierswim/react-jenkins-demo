@@ -39,6 +39,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
 
+                sh 'echo "Pushing Docker images to Docker Hub"'
                 withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     // Use the USERNAME and PASSWORD environment variables are available within this block  
 					sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
