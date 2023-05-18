@@ -26,7 +26,12 @@ pipeline {
                     env.PATH = "${dockerTool}/bin:${env.PATH}"
                 }
 
-                sh 'echo "Dockerizing the applicaton..."'
+                sh '''
+                    echo "Dockerizing the applicaton..."
+                    docker images
+                    docker build -t cpierswim/react-jenkins-docker:1
+                    docker images
+                '''
             }
         }
     }
