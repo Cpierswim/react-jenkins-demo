@@ -29,7 +29,7 @@ pipeline {
                 sh '''
                     echo "Dockerizing the applicaton..."
                     docker images
-                    docker build -t cpierswim/react-jenkins-docker:1
+                    docker build -t cpierswim/react-jenkins-docker:1 .
                     docker images
                 '''
             }
